@@ -6,8 +6,8 @@ void testEgalCoord(){
 	Coord c2 = creeCoord(3,1);
 	Coord c3 = creeCoord(2,1);
 	
-	ASSERT(egalCoord(c1,c2)==false);
-	ASSERT(egalCoord(c1,c3)==true);
+	ASSERT(!egalCoord(c1,c2));
+	ASSERT(egalCoord(c1,c3));
 	
 		
 }
@@ -54,7 +54,7 @@ void testdevantCoord(){
 	c2.ligne=2;
 	c2.colonne=1;
 	ASSERT(egalCoord(devantCoord(dir1,c1),c2));
-	cout<<"choisir une coordonée"<<endl;
+	cout<<"choisir une coordonnée"<<endl;
 	Coord c3;
 	cin>>c3.ligne;
 	cin>>c3.colonne;

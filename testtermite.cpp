@@ -29,13 +29,13 @@ int main(){
 	poseBrindille(G,c2);
 	
 	t1.brindille=false;
-	if(porteBrindille(t1)==true){
+	if(porteBrindille(t1)){
 		cout<<"Aie! erreur dans porteBrindille, 1"<<endl;
 	}
 	Termite t2;
 	
 	t2.brindille=true;
-	if(porteBrindille(t2)==false){
+	if(!porteBrindille(t2)){
 		cout<<"Aie! erreur dans porteBrindille, 2"<<endl;
 	}
 	
@@ -57,7 +57,7 @@ int main(){
 	afficheDirection(t1.dir);
 	
 	t1.dir=N;
-	if(laVoieEstLibre(G,t1)==true){
+	if(laVoieEstLibre(G,t1)){
 		cout<<"Aie! erreur dans laVoieEstLibre, 1"<<endl;
 	}
 	
@@ -67,7 +67,7 @@ int main(){
 	t2.numeroT=2;
 	G.grille[c3.ligne][c3.colonne].termite=t2.numeroT;
 	t2.dir=NE;
-	if(laVoieEstLibre(G,t2)==false){
+	if(!laVoieEstLibre(G,t2)){
 		cout<<"Aie! erreur dans laVoieEstLibre, 2"<<endl;
 	}
 	poseBrindille(G,devantTermite(t2));
@@ -159,7 +159,7 @@ int main(){
 		cout<<endl<<endl;
 	}	
 	
-	ASSERT(laVoieEstLibre(G,t4)==false);
+	ASSERT(!laVoieEstLibre(G,t4));
 	
 	/*
 	//ATTENTION : il y a une erreur de segmentation dans termiteEstEnferme

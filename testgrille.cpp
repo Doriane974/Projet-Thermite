@@ -28,17 +28,17 @@ int main(){
 	Coord c2;
 	c2.ligne=3;
 	c2.colonne=5;
-	if(dansGrille(G,c1)==true){
+	if(dansGrille(G,c1)){
 		cout<<"aie, probleme dans le dansGrille, 1"<<endl;
 	}
-	if(dansGrille(G,c2)==false){
-		cout<<"aie, probleme dans le dansGrille,2"<<endl;
+	if(!dansGrille(G,c2)){
+		cout<<"aie, probleme dans le dansGrille, 2"<<endl;
 	}
-	if(contientBrindille(G,c)==true){
+	if(contientBrindille(G,c)){
 		cout<<"aie, probleme dans le contientBrindille, 1"<<endl;
 	}
 	G.grille[c2.ligne][c2.colonne].brindille=true;
-	if(contientBrindille(G,c2)==false){
+	if(!contientBrindille(G,c2)){
 		cout<<"aie, probleme dans le contientBrindille, 2"<<endl;
 	}
 	
