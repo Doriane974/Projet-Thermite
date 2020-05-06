@@ -14,15 +14,11 @@ bool porteBrindille(Termite t){
 }
 
 void tourneADroite(Termite &t){
-	Direction dirt;
-	dirt=directionTermite(t);
-	t.dir=aDroite(dirt);
+	t.dir=aDroite(directionTermite(t));
 }
 
 void tourneAGauche(Termite &t){
-	Direction dirt;
-	dirt=directionTermite(t);
-	t.dir=aGauche(dirt);
+	t.dir=aGauche(directionTermite(t));
 }
 
 void tourneAleat(Termite &t){
