@@ -1,81 +1,63 @@
-#include "grille.cpp"
+#include "grille.hpp"
 
-
-struct Termite{
-	int numeroT;
-	Coord c;
-	int sablier;
-	bool brindille;
-	Direction dir;
-	bool tourneSurPlace;	
-};
-
-
-int main(){
+void testVide() {
 	Grille G;
-	G=initialiseGrilleVide(G, TAILLE);
-	
-	Coord c;
-	c.ligne=1;
-	c.colonne=2;
-	if(estVide(G,c)==false){
-		cout<<"aie, probleme dans le estVide"<<endl;
-	}
-	Coord c1;
-	c1.ligne=20;
-	c1.colonne=2;
-	
-	Coord c2;
-	c2.ligne=3;
-	c2.colonne=5;
-	if(dansGrille(G,c1)){
-		cout<<"aie, probleme dans le dansGrille, 1"<<endl;
-	}
-	if(!dansGrille(G,c2)){
-		cout<<"aie, probleme dans le dansGrille, 2"<<endl;
-	}
-	if(contientBrindille(G,c)){
-		cout<<"aie, probleme dans le contientBrindille, 1"<<endl;
-	}
-	G.grille[c2.ligne][c2.colonne].brindille=true;
-	if(!contientBrindille(G,c2)){
-		cout<<"aie, probleme dans le contientBrindille, 2"<<endl;
-	}
-	
-	G.grille[c.ligne][c.colonne].termite=2;
-	
-	numeroTermite(G,c);
-	
-	
-	//numeroTermite(G,c1);   ce test ci a fonctionner
-	
-	//afficheGrille(G);
-	//cout<<endl<<endl;
-	
-	Coord c3;
-	c3.ligne=18;
-	c3.colonne=14;
-	
-	poseBrindille(G,c3);
-	
-	
-	poseBrindille(G,c1);// ca fait rien donc ca a l'air bon
-	
-	Coord c4;
-	c4.ligne=17;
-	c4.colonne=9;
-	
-	
-	poseTermite(G, c4,4);
-	poseTermite(G, c1,4);
-	
-	
-	//enleveTermite(G, c4);
-	
-	afficheGrille(G);
-	cout<<endl<<endl;
-	
-	
+	Grille F;
+	initialiseGrilleVide(G, 10);
+	ASSERT(estVide(G));
+	initialiseGrilleVide(F, 25);
+	ASSERT(estVide(F));
+}
+
+void testDansGrille() {
+	Grille G;
+	initialiseGrilleVide(G, 100);
+	ASSERT(dansGrille(G, creeCoord(40, 30)));
+	ASSERT(dansGrille(G, creeCoord(0, 0)));
+	ASSERT(dansGrille(G, creeCoord(36, 16)));
+	ASSERT(dansGrille(G, creeCoord(99, 99)));
+	ASSERT(not dansGrille(G, creeCoord(100, 10)));
+	ASSERT(not dansGrille(G, creeCoord(-1, 50)));
+	ASSERT(not dansGrille(G, creeCoord(-3, 50)));
+	ASSERT(not dansGrille(G, creeCoord(120, 120)));
+}
+
+void testBrindille() {
+	Grille G;
+	initialiseGrilleVide(G, 10);
+	ASSERT(not contientBrindille(G, creeCoord(0, 0)));
+	ASSERT(not contientBrindille(G, creeCoord(20, 0)));
+	ASSERT(not contientBrindille(G, creeCoord(5, 5)));
+	ASSERT(not contientBrindille(G, creeCoord(10, 24)));
+	poseBrindille(G, creeCoord(2, 3));
+	ASSERT(contientBrindille(G, creeCoord(2, 3)));
+	enleveBrindille(G, creeCoord(2, 3));
+	ASSERT(not contientBrindille(G, creeCoord(2, 3)));
+	poseBrindille(G, creeCoord(20, 20));
+	ASSERT(not contientBrindille(G, creeCoord(20, 20)));
+}
+
+void testTermite() {
+	Grille G;
+	initialiseGrilleVide(G, 10);
+	ASSERT(numeroTermite(G, creeCoord(2, 2)) == -1);
+	ASSERT(numeroTermite(G, creeCoord(102, 2)) == -1);
+	ASSERT(numeroTermite(G, creeCoord(2, 102)) == -1);
+	ASSERT(numeroTermite(G, creeCoord(1, 1)) == -1);
+	ASSERT(numeroTermite(G, creeCoord(0, 0)) == -1);
+	poseTermite(G, creeCoord(2, 3), 6);
+	ASSERT(numeroTermite(G, creeCoord(2, 3)) == 6);
+	enleveTermite(G, creeCoord(2, 3));
+	ASSERT(numeroTermite(G, creeCoord(2, 3)) == -1);
+	poseTermite(G, creeCoord(100, 100), 6);
+	ASSERT(numeroTermite(G, creeCoord(100, 100)) == -1);
+}
+
+int main() {
+	testVide();
+	testDansGrille();
+	testBrindille();
+	testTermite();
 	return 0;
 }
 

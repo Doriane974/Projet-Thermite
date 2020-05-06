@@ -112,22 +112,11 @@ void testdevantCoord(){
 int main(){
 	couleur("33");
 	Coord c1 = creeCoord(2,1);
-	afficheCoord(c1);
-	
-	cout << endl;
-	cout<<getLigne(c1)<<endl;
-	cout<<getColonne(c1)<<endl;
-	
 	testEgalCoord();
-
 	testdirGaucheetDroite();
-	
 	Direction dirt=NE;
 	afficheDirection(dirt);
-	
-	
 	testdevantCoord();
-	
 	return 0;
 }
 
