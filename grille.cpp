@@ -14,34 +14,16 @@ void initialiseGrilleVide(Grille &G, int n){
 
 
 bool dansGrille(Grille G, Coord c){
-	if (c.ligne > G.hauteur-1 or c.ligne < 0 ){
-		return false;
-	}
-	if (c.colonne> G.largeur-1 or c.colonne < 0 ){
-		return false;
-	}
-	return true;
-		
+	return (c.ligne < G.hauteur&& c.ligne >= 0 && c.colonne < G.largeur && c.colonne >= 0);
 }
 
 bool estVide(Grille G, Coord c){
-
-	if(dansGrille(G,c)){
-		return (G.grille[c.ligne][c.colonne].termite == -1 && G.grille[c.ligne][c.colonne].brindille == 0);
-	}
-	return false;
+	return (dansGrille(G, c) && G.grille[c.ligne][c.colonne].termite == -1 && G.grille[c.ligne][c.colonne].brindille == 0);
 }
 
 
-
-
-
 bool contientBrindille( Grille G, Coord c){
-	if (dansGrille(G, c)){
-		return (!(G.grille[c.ligne][c.colonne].brindille == 0));
-	}
-	return false;
-	
+	return (dansGrille(G, c) && !(G.grille[c.ligne][c.colonne].brindille == 0));	
 }
 
 
