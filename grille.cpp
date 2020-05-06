@@ -14,7 +14,7 @@ void initialiseGrilleVide(Grille &G, int n){
 
 
 bool dansGrille(Grille G, Coord c){
-	return (c.ligne < G.hauteur&& c.ligne >= 0 && c.colonne < G.largeur && c.colonne >= 0);
+	return (c.ligne < G.hauteur && c.ligne >= 0 && c.colonne < G.largeur && c.colonne >= 0);
 }
 
 bool estVide(Grille G, Coord c){
