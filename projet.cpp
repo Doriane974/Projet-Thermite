@@ -7,7 +7,7 @@ void placeTermite(Grille &G, Armoire &A){
 	for(int i =0; i<NOMBRETERMITE; i++){
 		cr.ligne=rand()%TAILLE;
 		cr.colonne=rand()%TAILLE;
-		if(estVide(G,cr)==true && dansGrille(G,cr)==true){
+		if(estVide(G, cr) && dansGrille(G, cr)){
 			
 			direct=rand()%8;
 			switch(direct)
@@ -59,7 +59,7 @@ void placeBrindille(Grille &G){
 	for (int i=0; i<NOMBREBRINDILLE; i++){
 		cr.ligne=rand()%TAILLE;
 		cr.colonne=rand()%TAILLE;
-		if(estVide(G,cr)==true && dansGrille(G,cr)==true){
+		if(estVide(G, cr) && dansGrille(G, cr)){
 			G.grille[cr.ligne][cr.colonne].brindille=true;
 		}
 		else{
@@ -79,13 +79,13 @@ void afficheGrille(Grille G){
 	}
 	for(int i=0; i<TAILLE;i++){
 		for(int j = 0; j<TAILLE; j++){
-			if(G.grille[i][j].brindille==true){
+			if(G.grille[i][j].brindille){
 				couleur("33");
 				cout<<" | ";
 				couleur("0");
 			}
 			else if (G.grille[i][j].termite==-1){
-				cout<<"   ";// toutes les cases ont des thermites egales a 0;
+				cout<<"   ";// toutes les cases ont des termites egales a 0;
 			}
 			else{
 				cout<<" * ";
@@ -100,7 +100,7 @@ void afficheGrille(Grille G){
 
 void action(Grille &G,Armoire &A, int i){
 	chargeTermite(G,A.nom[i]);
-	dechargeBrindille(G,A.nom[i]);
+	dechargeBrindille(G, A.nom[i]);
 }
 
 void unTour(Grille &G, Armoire &A){
