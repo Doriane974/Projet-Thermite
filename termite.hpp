@@ -1,6 +1,6 @@
 #ifndef TERMITE_HPP_INCLUDED
 #define TERMITE_HPP_INCLUDED
-#include "grille.cpp"
+#include "grille.hpp"
 
 const int PEUTPOSER=6;
 

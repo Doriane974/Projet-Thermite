@@ -1,14 +1,6 @@
 #ifndef COORD_HPP_INCLUDED
 #define COORD_HPP_INCLUDED
-/*
-#include <vector>
-#include <iostream>
-#include <cstdlib>
-#include <cmath>
 
-
-#include "coord.cpp"
-*/
 #define ASSERT(test)                                                           \
     if (!(test))                                                               \
     cout << "Test failed in file " << __FILE__ << " line " << __LINE__         \

@@ -1,6 +1,6 @@
 #ifndef PROJET_HPP_INCLUDED
 #define PROJET_HPP_INCLUDED
-#include "termite.cpp"
+#include "termite.hpp"
 
 const int NOMBRETERMITE=20;
 const int NOMBREBRINDILLE=40;
