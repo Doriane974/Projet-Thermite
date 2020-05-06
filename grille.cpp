@@ -14,10 +14,10 @@ void initialiseGrilleVide(Grille &G, int n){
 
 
 bool dansGrille(Grille G, Coord c){
-	if (c.ligne>TAILLE-1 or c.ligne<0 ){
+	if (c.ligne > G.hauteur-1 or c.ligne < 0 ){
 		return false;
 	}
-	if (c.colonne>TAILLE-1 or c.colonne<0 ){
+	if (c.colonne> G.largeur-1 or c.colonne < 0 ){
 		return false;
 	}
 	return true;
@@ -26,13 +26,8 @@ bool dansGrille(Grille G, Coord c){
 
 bool estVide(Grille G, Coord c){
 
-	if(dansGrille(G,c)==true){
-		if(G.grille[c.ligne][c.colonne].termite==-1 && G.grille[c.ligne][c.colonne].brindille==0){
-			return true;
-		} 
-		else{
-			return false;
-		}
+	if(dansGrille(G,c)){
+		return (G.grille[c.ligne][c.colonne].termite == -1 && G.grille[c.ligne][c.colonne].brindille == 0);
 	}
 	return false;
 }
@@ -42,13 +37,8 @@ bool estVide(Grille G, Coord c){
 
 
 bool contientBrindille( Grille G, Coord c){
-	if (dansGrille(G, c)==true){
-		if(G.grille[c.ligne][c.colonne].brindille==0){
-			return false;
-		}
-		else{
-			return true;
-		}
+	if (dansGrille(G, c)){
+		return (!(G.grille[c.ligne][c.colonne].brindille == 0));
 	}
 	return false;
 	
@@ -56,44 +46,36 @@ bool contientBrindille( Grille G, Coord c){
 
 
 int numeroTermite(Grille G, Coord c){
-	if (dansGrille(G,c)==true){
+	if (dansGrille(G, c)){
 		return G.grille[c.ligne][c.colonne].termite;
 	}
 	return -1;
 }
 
 void poseBrindille(Grille &G, Coord c){
-	if (dansGrille(G,c)==true){
-		if(estVide(G,c)==true){
-			G.grille[c.ligne][c.colonne].brindille=true;
-		}
+	if (dansGrille(G,c) && estVide(G, c)){
+		G.grille[c.ligne][c.colonne].brindille=true;
 	}
 }
 
 
 void enleveBrindille(Grille &G, Coord c){
-	if (dansGrille(G,c)==true){
-		if(contientBrindille(G,c)==true){
-			G.grille[c.ligne][c.colonne].brindille=false;
-		}
+	if (dansGrille(G,c) && contientBrindille(G, c)){
+		G.grille[c.ligne][c.colonne].brindille=false;
 	}
 }
 
 
 void poseTermite(Grille &G, Coord c,Termite t){
-	if (dansGrille(G,c)==true){
-		if(numeroTermite(G,c)==-1){
-			G.grille[c.ligne][c.colonne].termite = t.numeroT;
-			t.c=c;
-		}
+	if (dansGrille(G,c) && numeroTermite(G, c) == -1){
+		G.grille[c.ligne][c.colonne].termite = t.numeroT;
+		t.c=c;
 	}
 }
 
 void enleveTermite(Grille &G, Coord c){
-	if (dansGrille(G,c)==true){
-		if( numeroTermite(G,c)!=-1){
-			G.grille[c.ligne][c.colonne].termite=-1;
-		}
+	if (dansGrille(G,c) && numeroTermite(G, c) != -1){
+		G.grille[c.ligne][c.colonne].termite=-1;
 	}	
 }
 
