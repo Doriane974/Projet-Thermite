@@ -14,11 +14,11 @@ bool porteBrindille(Termite t){
 }
 
 void tourneADroite(Termite &t){
-	t.dir=aDroite(directionTermite(t));
+	t.dir = aDroite(directionTermite(t));
 }
 
 void tourneAGauche(Termite &t){
-	t.dir=aGauche(directionTermite(t));
+	t.dir = aGauche(directionTermite(t));
 }
 
 void tourneAleat(Termite &t){
@@ -31,21 +31,16 @@ void tourneAleat(Termite &t){
 	}
 }
 
-bool laVoieEstLibre(Grille G,Termite t){
-	Coord cd=devantTermite(t);
-	if(dansGrille(G,cd)==true){
-		if(G.grille[cd.ligne][cd.colonne].termite==-1 && G.grille[cd.ligne][cd.colonne].brindille==false){
-			return true;
-		}
+bool laVoieEstLibre(Grille G, Termite t){
+	Coord cd = devantTermite(t);
+	if(dansGrille(G, cd)){
+		return (G.grille[cd.ligne][cd.colonne].termite == -1 && !G.grille[cd.ligne][cd.colonne].brindille);
 	}
 	return false;
 }
 
 bool brindilleEnFace(Grille G, Termite t){
-	if (contientBrindille(G,devantTermite(t))==true){
-		return true;
-	}
-	return false;
+	return contientBrindille(G, devantTermite(t));
 }
 
 /*
@@ -154,23 +149,22 @@ bool vasEtreEnferme(Grille G, Termite t){
 
 void avanceTermite(Grille &G, Termite &t){
 	Coord tamp;
-	tamp=t.c;
+	tamp = t.c;
 	Coord dev;
-	dev=devantTermite(t);
-	int i;
+	dev = devantTermite(t);
+	int i = 0;
 	//t.c=devantTermite(t);
-	while(!laVoieEstLibre(G,t) && !t.tourneSurPlace){
+	while(!laVoieEstLibre(G, t) && !t.tourneSurPlace){
 		tourneAleat(t);
 		i++;
 		if(i==16){
-			t.tourneSurPlace=true;
+			t.tourneSurPlace = true;
 		}
-		laVoieEstLibre(G,t);
 	}
-	if(laVoieEstLibre(G,t)==true){
-		enleveTermite(G,tamp);
-		poseTermite(G,dev,t);
-		t.c=dev;
+	if(laVoieEstLibre(G, t)){
+		enleveTermite(G, tamp);
+		poseTermite(G, dev, t);
+		t.c = dev;
 		t.sablier++;
 	}
 }
