@@ -9,28 +9,28 @@ struct Coord{
 */
 
 Coord creeCoord(int lig, int col){
-	Coord coordonnee;
-	coordonnee.ligne=lig;
-	coordonnee.colonne=col;
-	return coordonnee;
+	Coord C;
+	C.ligne=lig;
+	C.colonne=col;
+	return C;
 }
 
-void afficheCoord(Coord coordonnee){
-	cout<<"("<<coordonnee.ligne<<","<<coordonnee.colonne<<")"<<endl;
+void afficheCoord(Coord C){
+	cout << "(" << C.ligne << "," << C.colonne << ")" << endl;
 	
 	
 }
 
 
 //pour avoir le numero de colonne
-int getLigne(Coord coordonnee){
-	return coordonnee.ligne;
+int getLigne(Coord C){
+	return C.ligne;
 	
 }
 
 //pour avoir le numero de ligne
-int getColonne(Coord coordonee){
-	return coordonee.colonne;
+int getColonne(Coord C){
+	return C.colonne;
 	
 }
 
@@ -80,7 +80,7 @@ void afficheDirection(Direction dir){
 			break;
 	}
 	
-	cout<<"la direction est "<<direction<<endl;
+	cout<<"la direction est " << direction << endl;
 }
 
 Direction aGauche(Direction dir){

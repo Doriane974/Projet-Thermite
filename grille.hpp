@@ -1,7 +1,7 @@
 #ifndef GRILLE_HPP_INCLUDED
 #define GRILLE_HPP_INCLUDED
 
-#include "coord.cpp"
+#include "coord.hpp"
 
 const int ETAT=4;
 const int TAILLE=20;
@@ -33,7 +33,7 @@ struct Termite{
 /** initialise une grille vide de taille 20*20
 @param[out] G: la Grille construite
 **/
-void initialiseGrilleVide(Grille &G);
+void initialiseGrilleVide(Grille &G, int n);
 
 
 /**verfie si des coordonnées sont bien dans la grille, retourne true si c'est le cas, faux sinon
@@ -83,7 +83,7 @@ void enleveBrindille(Grille &G, Coord c);
 @param[in] t : le numéro du termite a poser
 @param[out] G: la grille modifiée
 **/
-void poseTermite(Grille &G, Coord c, int t);
+void poseTermite(Grille &G, Coord c, Termite t);
 
 /**enleve un termite d'une case en contenant un de la grille
 @param[in] G: une grille de laquelle on va enlever le termite

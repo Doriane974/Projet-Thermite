@@ -1,7 +1,7 @@
 #include "grille.hpp"
 
 
-Grille initialiseGrilleVide(Grille G, int n){
+void initialiseGrilleVide(Grille &G, int n){
 	G.largeur=n;
 	G.hauteur=n;
 	for(int i = 0; i<G.hauteur; i++){
@@ -10,7 +10,6 @@ Grille initialiseGrilleVide(Grille G, int n){
 			G.grille[i][j].termite = -1;
 		}
 	}
-	return G;
 }
 
 

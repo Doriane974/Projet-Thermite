@@ -46,20 +46,20 @@ Coord creeCoord(int col, int lig);
 /** affiche les coordonnée sous la forme (lig,col)
 @param[in] coordonee : des coordonnées de type Coord
 **/
-void afficheCoord(Coord coordonnee);
+void afficheCoord(Coord C);
 
 
 
 /** retourne l'abscisse(le numero de colonne) d'une coordonéée donnée
 @param[in] coordonnee : un Coord dont on veut obtenir l'abscisse
 **/
-int getLigne(Coord coordonnee);
+int getLigne(Coord C);
 
 
 /** retourne l'ordonnée(le numero de ligne) d'une coordonéée donnée
 @param[in] coordonnee : un Coord dont on veut obtenir l'ordonnée
 **/
-int getColonne(Coord coordonee);
+int getColonne(Coord C);
 
 
 
