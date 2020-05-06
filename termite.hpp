@@ -43,7 +43,7 @@ void tourneAleat(Termite &t);
 @param[in] G: la grille dans laquelle on se place;
 @param[in] t: la termite donc on veut savoir si la case devant elle est libre; 
 **/
-bool leVoieEstLibre(Grille G,Termite t);
+bool laVoieEstLibre(Grille G, Termite t);
 
 
 /**retourne true si la case en face du termite contient une brindille, faux sinon
@@ -56,7 +56,7 @@ bool brindilleEnFace(Grille G, Termite t);
 @param[in] G: la grille dans laquelle on se place;
 @param[in/out] t : le termite qui est peut etre enferme, et dont on change le champ tourSurPlace
 **/
-bool termiteEstEnferme(Grille G, Termite &t);
+//bool termiteEstEnferme(Grille G, Termite &t);
 
 /**regarde si le termite peut poser une brindille, si il s'enferme en le faisant : retourne false, sinon retourne tru;
 @param[in] G:lagrille dans laquelle on se place
