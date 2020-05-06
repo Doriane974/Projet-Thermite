@@ -35,14 +35,8 @@ int getColonne(Coord C){
 }
 
 
-bool egalCoord(Coord c1, Coord c2){
-	
-	if (c1.ligne==c2.ligne && c1.colonne==c2.colonne){
-		return true;
-	}
-	return false;
-	
-	
+bool egalCoord(Coord c1, Coord c2){	
+	return(c1.ligne == c2.ligne && c1.colonne == c2.colonne);
 }
 
 
