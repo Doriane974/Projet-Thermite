@@ -6,7 +6,7 @@ Direction directionTermite(Termite t){
 }
 
 Coord devantTermite(Termite t){
-	return devantCoord(directionTermite(t), t.c);
+	return devantCoord(t.c, t.dir);
 }
 	
 bool porteBrindille(Termite t){
@@ -14,11 +14,11 @@ bool porteBrindille(Termite t){
 }
 
 void tourneADroite(Termite &t){
-	t.dir = aDroite(directionTermite(t));
+	tourneDroite(t.dir);
 }
 
 void tourneAGauche(Termite &t){
-	t.dir = aGauche(directionTermite(t));
+	tourneGauche(t.dir);
 }
 
 void tourneAleat(Termite &t){

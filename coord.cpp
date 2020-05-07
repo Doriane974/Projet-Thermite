@@ -1,12 +1,4 @@
-
 #include "coord.hpp"
-
-/*
-struct Coord{
-	int abs;
-	int ord;
-};
-*/
 
 Coord creeCoord(int lig, int col){
 	Coord C;
