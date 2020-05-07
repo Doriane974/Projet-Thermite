@@ -5,8 +5,8 @@ void placeTermite(Grille &G, Armoire &A){
 	Coord cr;
 	int direct;
 	for(int i =0; i<NOMBRETERMITE; i++){
-		cr.ligne=rand()%TAILLE;
-		cr.colonne=rand()%TAILLE;
+		cr.ligne=rand()%G.hauteur;
+		cr.colonne=rand()%G.largeur;
 		if(estVide(G, cr) && dansGrille(G, cr)){
 			
 			direct=rand()%8;
@@ -57,8 +57,8 @@ void placeTermite(Grille &G, Armoire &A){
 void placeBrindille(Grille &G){
 	Coord cr;
 	for (int i=0; i<NOMBREBRINDILLE; i++){
-		cr.ligne=rand()%TAILLE;
-		cr.colonne=rand()%TAILLE;
+		cr.ligne=rand()%G.hauteur;
+		cr.colonne=rand()%G.largeur;
 		if(estVide(G, cr) && dansGrille(G, cr)){
 			G.grille[cr.ligne][cr.colonne].brindille=true;
 		}
@@ -74,11 +74,11 @@ void placeBrindille(Grille &G){
 
 
 void afficheGrille(Grille G){
-	for (int i = 0; i<TAILLE; i++){
+	for (int i = 0; i<G.hauteur; i++){
 		cout<<"---";
 	}
-	for(int i=0; i<TAILLE;i++){
-		for(int j = 0; j<TAILLE; j++){
+	for(int i=0; i<G.hauteur;i++){
+		for(int j = 0; j<G.largeur; j++){
 			if(G.grille[i][j].brindille){
 				couleur("33");
 				cout<<" | ";
@@ -93,7 +93,7 @@ void afficheGrille(Grille G){
 		}
 		cout<<endl;
 	}
-	for (int i = 0; i<TAILLE; i++){
+	for (int i = 0; i<G.largeur; i++){
 		cout<<"---";
 	}
 }
@@ -117,7 +117,7 @@ int main(){
 	srand(time(NULL));
 	Grille G;
 	Armoire A;
-	G=initialiseGrilleVide(G,TAILLE);
+	initialiseGrilleVide(G,20);
 	placeTermite(G,A);
 	placeBrindille(G);
 	afficheGrille(G);
