@@ -88,7 +88,7 @@ void tourneDroiteDir(Direction &dir);
 @param[in] dir: direction vers laquelle on veut les coooredonées de la case de devant
 @param[in] c: la case dans laquelle on se place pour avoir les coordonnées devant 
 **/
-Coord devantCoord(Direction dir, Coord c);
+Coord devantCoord(Coord c, Direction dir );
 
 
 
