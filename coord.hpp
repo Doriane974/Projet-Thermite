@@ -20,7 +20,7 @@ struct Coord{
 	int colonne; //anciennement ord
 };
 
-enum Direction{N,NO,O,SO,S,SE,E,NE};
+enum class Direction{N,NO,O,SO,S,SE,E,NE};
 
 /////////////////////////////////////////////////////////////////////////////////
 //                    Documentation des fonctions du type abstrait             //
