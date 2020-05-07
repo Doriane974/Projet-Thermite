@@ -12,16 +12,15 @@ void initialiseGrilleVide(Grille &G, int n){
 	}
 }
 
-Termite creeTermite(int n, Coord c){
+Termite creeTermite(int n){
 	Termite T;
 	T.numeroT = n;
-	T.c = c;
+	T.c = creeCoord(0, 0);
 	T.sablier = 0;
 	T.brindille = false;
 	T.dir = Direction::N;
 	T.tourneSurPlace = false;
 	return T;
-	int numeroT;
 }
 
 bool dansGrille(Grille G, Coord c){
@@ -59,7 +58,7 @@ void enleveBrindille(Grille &G, Coord c){
 }
 
 
-void poseTermite(Grille &G, Coord c,Termite t){
+void poseTermite(Grille &G, Coord c, Termite t){
 	if (dansGrille(G,c) && numeroTermite(G, c) == -1){
 		G.grille[c.ligne][c.colonne].termite = t.numeroT;
 		t.c=c;

@@ -45,12 +45,11 @@ void testTermite() {
 	ASSERT(numeroTermite(G, creeCoord(2, 102)) == -1);
 	ASSERT(numeroTermite(G, creeCoord(1, 1)) == -1);
 	ASSERT(numeroTermite(G, creeCoord(0, 0)) == -1);
-	Coord coord_1 = creeCoord(2, 3);
-	poseTermite(G, coord_1, creeTermite(6, coord_1));
+	poseTermite(G, creeCoord(2, 3), creeTermite(6));
 	ASSERT(numeroTermite(G, creeCoord(2, 3)) == 6);
 	enleveTermite(G, creeCoord(2, 3));
 	ASSERT(numeroTermite(G, creeCoord(2, 3)) == -1);
-	poseTermite(G, creeCoord(100, 100), 6);
+	poseTermite(G, creeCoord(100, 100), creeTermite(10));
 	ASSERT(numeroTermite(G, creeCoord(100, 100)) == -1);
 }
 

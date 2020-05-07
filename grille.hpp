@@ -35,7 +35,7 @@ struct Termite{
 void initialiseGrilleVide(Grille &G, int n);
 
 
-Termite creeTermite(int n, Coord c);
+Termite creeTermite(int n);
 
 /**verfie si des coordonnées sont bien dans la grille, retourne true si c'est le cas, faux sinon
 @param[in] G : une grille dans laquelle on verifie si les coordonnées sont
