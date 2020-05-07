@@ -53,12 +53,11 @@ void testTermite() {
 	ASSERT(numeroTermite(G, creeCoord(100, 100)) == -1);
 }
 
-int main() {
+
+void testGrille() {
 	testVide();
 	testDansGrille();
 	testBrindille();
 	testTermite();
-	return 0;
 }
-
 

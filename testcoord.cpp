@@ -1,4 +1,4 @@
-#include "coord.cpp"
+#include "coord.hpp"
 
 void testEgalCoord(){
 	Coord c1 = creeCoord(2,1);
@@ -105,10 +105,9 @@ void testdevantCoord(){
 
 
 
-int main(){
+void testCoord(){
 	testEgalCoord();
 	testdirGaucheetDroite();
 	testdevantCoord();
-	return 0;
 }
 

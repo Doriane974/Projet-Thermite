@@ -1,6 +1,6 @@
-#include "termite.cpp"
+#include "termite.hpp"
 
-
+/*
 
 int main(){
 /*
@@ -170,6 +170,8 @@ int main(){
 	// IL Y A AUSSI SUREMENT UNE ERREUR DANS LAVOIEESTLIBRE
 	
 	*/
+/*
 	return 0;	
 }
 
+*/
