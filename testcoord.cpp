@@ -1,4 +1,4 @@
-#include "coord.cpp"
+#include "coord.hpp"
 
 void testEgalCoord(){
 	Coord c1 = creeCoord(2,1);

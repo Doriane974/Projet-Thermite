@@ -172,10 +172,13 @@ Coord devantCoord(Coord c, Direction dir){
 	case Direction::E:
 			c.colonne=c.colonne+1;
 			break;
-		default://NE
-			c.colonne=c.colonne+1;
-			c.ligne=c.ligne-1;
-			break;
+	case Direction::NE:
+			c.colonne = c.colonne + 1;
+			c.ligne = c.ligne - 1;
+			break;	
+		default:
+			cout << "Erreur dans la direction" << endl;
+			
 	}	
 	
 	return c;
