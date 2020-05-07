@@ -21,7 +21,10 @@ void testdirGaucheetDroite(){
 */	
 	//(a)
 	Direction dir_a = Direction::N;
-	ASSERT(tourneDroiteDir(tourneGaucheDir(dir_a)) == Direction::N);
+	tourneGaucheDir(dir_a);
+	ASSERT(dir_a == Direction::NE);
+	tourneDroiteDir(dir_a);
+	ASSERT(dir_a == Direction::N);
 	//(b)et(c)
 	Direction dir_b = Direction::S;
 	Direction dir_c = Direction::S;
