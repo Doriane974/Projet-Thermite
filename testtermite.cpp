@@ -3,10 +3,10 @@
 
 
 int main(){
-	
+/*
 	srand(time(NULL));
 	Grille G;
-	G=initialiseGrilleVide(G,TAILLE);
+	initialiseGrilleVide(G,TAILLE);
 	
 	Termite t1;
 	t1.dir=N;
@@ -130,7 +130,7 @@ int main(){
 	t6.sablier=6;
 	t6.brindille=false;
 	t6.c=c6;
-	t6.dir=N;
+	t6.dir=Direction::N;
 	poseTermite(G,c6,t6);
 	cout<<endl<<endl;
 	afficheGrille(G);
@@ -149,7 +149,7 @@ int main(){
 	t7.sablier=6;
 	t7.brindille=false;
 	t7.c=c7;
-	t7.dir=N;
+	t7.dir=Direction::N;
 	poseTermite(G,c7,t7);
 	
 	for (int i=0; i<5; i++){
