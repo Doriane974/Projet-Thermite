@@ -69,7 +69,7 @@ void afficheDirection(Direction dir){
 	cout<<"la direction est " << direction << endl;
 }
 
-void tourneGauche(Direction &dir){
+void tourneGaucheDir(Direction &dir){
 	switch(dir)
 	{
 		case N:
@@ -103,7 +103,7 @@ void tourneGauche(Direction &dir){
 	
 }
 
-void tourneDroite(Direction &dir){
+void tourneDroiteDir(Direction &dir){
 	switch(dir)
 	{
 		case N:

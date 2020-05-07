@@ -75,12 +75,12 @@ void afficheDirection(Direction dir);
 /**retourne la direction a Gauche d'une Direction donnée(un quart de tour a gauche)
 @param[in] dir: la direction dont on veut la gauche
 **/
-void tourneGauche(Direction &dir);
+void tourneGaucheDir(Direction &dir);
 
 /**retourne la direction a droite d'une Direction donnée(un quart de tours a droite)
 @param[in] dir: la direction dont on veut la droite
 **/
-void tourneDroite(Direction &dir);
+void tourneDroiteDir(Direction &dir);
 
 
 

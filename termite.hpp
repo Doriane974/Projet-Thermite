@@ -25,12 +25,12 @@ bool porteBrindille(Termite t);
 /**decale la direction de la termite t de 1 huitieme de tout vers la droite
 @param[in/out] t :le termite a faire tourner vers la droite;
 **/
-void tourneADroite(Termite &t);
+void tourneDroiteTermite(Termite &t);
 
 /**decale la direction de la termite t de 1 huitieme de tout vers la gauche
 @param[in/out] t :le termite a faire tourner vers la gauche;
 **/
-void tourneAGauche(Termite &t);
+void tourneGaucheTermite(Termite &t);
 
 
 /**Decale un termite d'un huitieme de tour vers la gauche ou vers la Droite(choisit aleatoirement)

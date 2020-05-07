@@ -13,21 +13,21 @@ bool porteBrindille(Termite t){
 	return t.brindille;
 }
 
-void tourneADroite(Termite &t){
-	tourneDroite(t.dir);
+void tourneDroiteTermite(Termite &t){
+	tourneDroiteDir(t.dir);
 }
 
-void tourneAGauche(Termite &t){
-	tourneGauche(t.dir);
+void tourneGaucheTermite(Termite &t){
+	tourneGaucheDir(t.dir);
 }
 
 void tourneAleat(Termite &t){
 	int r = rand()%2;
 	if(r==0){
-		tourneADroite(t);
+		tourneDroiteTermite(t);
 	}
 	else{
-		tourneAGauche(t);
+		tourneGaucheTermite(t);
 	}
 }
 
