@@ -4,7 +4,6 @@
 #include "coord.hpp"
 
 const int ETAT=4;
-const int TAILLE=20;
 
 struct Case{
 	
@@ -52,7 +51,7 @@ bool estVide(Grille G, Coord c);
 @param[in] G : une grille dans laquelle on verifie elle contient une brindille
 @param[in] c : les coordonnées de la case a verifier 
 **/
-bool contientBrindille( Grille G, Coord c);
+bool contientBrindille(Grille G, Coord c);
 
 
 /**retourne le numéro de la termite contenue dans la case, -1 si il n'y en a pas
@@ -91,7 +90,6 @@ void poseTermite(Grille &G, Coord c, Termite t);
 @param[out] G: la grille modifiée
 **/
 void enleveTermite(Grille &G, Coord c);
-
 
 
 #endif
