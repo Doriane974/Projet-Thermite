@@ -13,28 +13,28 @@ void placeTermite(Grille &G, Armoire &A){
 			switch(direct)
 			{
 				case 0:
-					A.nom[i].dir=N;
+					A.nom[i].dir=Direction::N;
 					break;
 				case 1:
-					A.nom[i].dir=NO;
+					A.nom[i].dir=Direction::NO;
 					break;
 				case 2:
-					A.nom[i].dir=O;
+					A.nom[i].dir=Direction::O;
 					break;
 				case 3:
-					A.nom[i].dir=SO;
+					A.nom[i].dir=Direction::SO;
 					break;
 				case 4:
-					A.nom[i].dir=S;
+					A.nom[i].dir=Direction::S;
 					break;
 				case 5:
-					A.nom[i].dir=SE;
+					A.nom[i].dir=Direction::SE;
 					break;
 				case 6:
-					A.nom[i].dir=E;
+					A.nom[i].dir=Direction::E;
 					break;
 				default:
-					A.nom[i].dir=NE;
+					A.nom[i].dir=Direction::NE;
 					break;
 			}
 			

@@ -20,13 +20,13 @@ void testdirGaucheetDroite(){
 être revenu dans la direction initiale ;
 */	
 	//(a)
-	Direction dir_a = N;
-	ASSERT(aDroite(aGauche(dir_a)) == N);
+	Direction dir_a = Direction::N;
+	ASSERT(tourneDroiteDir(tourneGaucheDir(dir_a)) == Direction::N);
 	//(b)et(c)
-	Direction dir_b = S;
-	Direction dir_c = S;
-	Direction dir_b_2 = S;
-	Direction dir_c_2 = S;
+	Direction dir_b = Direction::S;
+	Direction dir_c = Direction::S;
+	Direction dir_b_2 = Direction::S;
+	Direction dir_c_2 = Direction::S;
 	for(int i=0; i<8; i++){
 		tourneDroite(dir_b_2);
 		tourneGauche(dir_c_2);

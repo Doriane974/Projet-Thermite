@@ -40,30 +40,33 @@ void afficheDirection(Direction dir){
 	
 	switch(dir)
 	{
-		case N:
+	case Direction::N:
 			direction = "nord";
 			break;
-		case NO:
+	case Direction::NO:
 			direction = "nord-ouest";
 			break;
-		case O:
+	case Direction::O:
 			direction = "ouest";
 			break;
-		case SO:
+	case Direction::SO:
 			direction = "sud-ouest";
 			break;
-		case S:
+	case Direction::S:
 			direction = "sud";
 			break;
-		case SE:
+	case Direction::SE:
 			direction = "sud-est";
 			break;
-		case E:
+	case Direction::E:
 			direction = "est";
 			break;
-		default://NE
+	case Direction::NE:
 			direction = "nord-est";
 			break;
+	default:
+		direction = "NULL";
+		break;
 	}
 	
 	cout<<"la direction est " << direction << endl;
@@ -72,29 +75,29 @@ void afficheDirection(Direction dir){
 void tourneGaucheDir(Direction &dir){
 	switch(dir)
 	{
-		case N:
-			dir = NO;
+	case Direction::N:
+			dir = Direction::NO;
 			break;
-		case NO:
-			dir = O;
+	case Direction::NO:
+			dir = Direction::O;
 			break;
-		case O:
-			dir = SO;
+	case Direction::O:
+			dir = Direction::SO;
 			break;
-		case SO:
-			dir = S;
+	case Direction::SO:
+			dir = Direction::S;
 			break;
-		case S:
-			dir = SE;
+	case Direction::S:
+			dir = Direction::SE;
 			break;
-		case SE:
-			dir = E;
+	case Direction::SE:
+			dir = Direction::E;
 			break;
-		case E:
-			dir = NE;
+	case Direction::E:
+			dir = Direction::NE;
 			break;
-		case NE:
-			dir = NE;
+	case Direction::NE:
+			dir = Direction::NE;
 			break;
 		default:
 			cout << "Direction invalide" << endl;
@@ -106,29 +109,29 @@ void tourneGaucheDir(Direction &dir){
 void tourneDroiteDir(Direction &dir){
 	switch(dir)
 	{
-		case N:
-			dir = NE;
+	case Direction::N:
+			dir = Direction::NE;
 			break;
-		case NO:
-			dir = N;
+	case Direction::NO:
+			dir = Direction::N;
 			break;
-		case O:
-			dir = NO;
+	case Direction::O:
+			dir = Direction::NO;
 			break;
-		case SO:
-			dir = O;
+	case Direction::SO:
+			dir = Direction::O;
 			break;
-		case S:
-			dir = SO;
+	case Direction::S:
+			dir = Direction::SO;
 			break;
-		case SE:
-			dir = S;
+	case Direction::SE:
+			dir = Direction::S;
 			break;
-		case E:
-			dir = SE;
+	case Direction::E:
+			dir = Direction::SE;
 			break;
-		case NE:
-			dir = NE;
+	case Direction::NE:
+			dir = Direction::NE;
 			break;
 		default:
 			cout << "Coordonnée invalide" << endl;
@@ -145,28 +148,28 @@ Coord devantCoord(Coord c, Direction dir){
 	
 	switch (dir)
 	{
-		case N:
+	case Direction::N:
 			c.ligne=c.ligne-1;//
 			break;
-		case NO:
+	case Direction::NO:
 			c.ligne=c.ligne-1;//
 			c.colonne=c.colonne-1;//
 			break;
-		case O:
+	case Direction::O:
 			c.colonne=c.colonne-1;//
 			break;
-		case SO:
+	case Direction::SO:
 			c.ligne=c.ligne+1;
 			c.colonne=c.colonne-1;//
 			break;
-		case S:
+	case Direction::S:
 			c.ligne=c.ligne+1;
 			break;
-		case SE:
+	case Direction::SE:
 			c.colonne=c.colonne+1;//
 			c.ligne=c.ligne+1;
 			break;
-		case E:
+	case Direction::E:
 			c.colonne=c.colonne+1;
 			break;
 		default://NE
