@@ -33,10 +33,7 @@ void tourneAleat(Termite &t){
 
 bool laVoieEstLibre(Grille G, Termite t){
 	Coord cd = devantTermite(t);
-	if(dansGrille(G, cd)){
-		return (G.grille[cd.ligne][cd.colonne].termite == -1 && !G.grille[cd.ligne][cd.colonne].brindille);
-	}
-	return false;
+	return (dansGrille(G, cd) && G.grille[cd.ligne][cd.colonne].termite == -1 && !G.grille[cd.ligne][cd.colonne].brindille);
 }
 
 bool brindilleEnFace(Grille G, Termite t){
