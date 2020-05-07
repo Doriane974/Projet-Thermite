@@ -45,57 +45,54 @@ void testdirGaucheetDroite(){
 
 
 void testdevantCoord(){
-	Coord c1 = creeCoord(1, 1);
-	Direction dir1=Direction::S;
-	Coord c2 = creeCoord(2, 1);
-	ASSERT(egalCoord(devantCoord(c1, dir1),c2));
-	Coord c3 = creeCoord(rand()%20, rand()%20);
-	int direct3 = rand()%8+1;
-	Direction dir3;
-	
-	switch(direct3)
+	ASSERT(egalCoord(devantCoord(creeCoord(1, 1), Direction::S), creeCoord(2, 1)));
+	Coord myRandCoord = creeCoord(rand()%20, rand()%20);
+
+	int myRandValue = rand()%8+1;	
+	Direction myRandDirection;
+	switch(myRandValue)
 	{
 		case 1:
-			dir3 =Direction::N;
+			myRandDirection = Direction::N;
 			break;
 		case 2:
-			dir3 =Direction::NO;
+			myRandDirection = Direction::NO;
 			break;
 		case 3:
-			dir3 =Direction::O;
+			myRandDirection = Direction::O;
 			break;
 		case 4:
-			dir3 =Direction::SO;
+			myRandDirection = Direction::SO;
 			break;
 		case 5:
-			dir3 =Direction::S;
+			myRandDirection = Direction::S;
 			break;
 		case 6:
-			dir3 =Direction::SE;
+			myRandDirection = Direction::SE;
 			break;
 		case 7:
-			dir3 =Direction::E;
+			myRandDirection = Direction::E;
 			break;
 		case 8:
-			dir3 = Direction::NE;
+			myRandDirection = Direction::NE;
 			break;
 		default :
 			cout << "Erreur lors de l'attribution de la direction" << endl;
-			dir3 = Direction::N;
+			myRandDirection = Direction::N;
 			break;
 	}
 	
-	Coord c4 = devantCoord(c3, dir3);
+	Coord inFrontOfMyCoord = devantCoord(myRandCoord, myRandDirection);
 	
-	for(int i=0;i<4;i++){
-		tourneDroiteDir(dir3);
+	for(int i=0; i<4; i++){
+		tourneDroiteDir(myRandDirection);
 	}
 	
-	c4 = devantCoord(c4, dir3);
+	Coord backOnMyTrackCoord = devantCoord(inFrontOfMyCoord, myRandDirection);
 	//Comme j'ai mis en aleartoire les coordonées+directions
 	//choisies, ce test ne marche pas tout le temps
 	//je ne comprend pas pourquoi
-	ASSERT(egalCoord(c3,c4));
+	ASSERT(egalCoord(myRandCoord, backOnMyTrackCoord));
 	
 	
 	
