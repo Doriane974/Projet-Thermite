@@ -16,25 +16,25 @@ void testDansGrille() {
 	ASSERT(dansGrille(G, creeCoord(0, 0)));
 	ASSERT(dansGrille(G, creeCoord(36, 16)));
 	ASSERT(dansGrille(G, creeCoord(99, 99)));
-	ASSERT(not dansGrille(G, creeCoord(100, 10)));
-	ASSERT(not dansGrille(G, creeCoord(-1, 50)));
-	ASSERT(not dansGrille(G, creeCoord(-3, 50)));
-	ASSERT(not dansGrille(G, creeCoord(120, 120)));
+	ASSERT(!dansGrille(G, creeCoord(100, 10)));
+	ASSERT(!dansGrille(G, creeCoord(-1, 50)));
+	ASSERT(!dansGrille(G, creeCoord(-3, 50)));
+	ASSERT(!dansGrille(G, creeCoord(120, 120)));
 }
 
 void testBrindille() {
 	Grille G;
 	initialiseGrilleVide(G, 10);
-	ASSERT(not contientBrindille(G, creeCoord(0, 0)));
-	ASSERT(not contientBrindille(G, creeCoord(20, 0)));
-	ASSERT(not contientBrindille(G, creeCoord(5, 5)));
-	ASSERT(not contientBrindille(G, creeCoord(10, 24)));
+	ASSERT(!contientBrindille(G, creeCoord(0, 0)));
+	ASSERT(!contientBrindille(G, creeCoord(20, 0)));
+	ASSERT(!contientBrindille(G, creeCoord(5, 5)));
+	ASSERT(!contientBrindille(G, creeCoord(10, 24)));
 	poseBrindille(G, creeCoord(2, 3));
 	ASSERT(contientBrindille(G, creeCoord(2, 3)));
 	enleveBrindille(G, creeCoord(2, 3));
-	ASSERT(not contientBrindille(G, creeCoord(2, 3)));
+	ASSERT(!contientBrindille(G, creeCoord(2, 3)));
 	poseBrindille(G, creeCoord(20, 20));
-	ASSERT(not contientBrindille(G, creeCoord(20, 20)));
+	ASSERT(!contientBrindille(G, creeCoord(20, 20)));
 }
 
 void testTermite() {
