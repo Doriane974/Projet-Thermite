@@ -49,10 +49,8 @@ void testdevantCoord(){
 	Direction dir1=Direction::S;
 	Coord c2 = creeCoord(2, 1);
 	ASSERT(egalCoord(devantCoord(c1, dir1),c2));
-	Coord c3;
-	c3.ligne=rand()%20;
-	c3.colonne=rand()%20;
-	int direct3=rand()%8+1;
+	Coord c3 = creeCoord(rand()%20, rand()%20);
+	int direct3 = rand()%8+1;
 	Direction dir3;
 	
 	switch(direct3)
@@ -78,20 +76,22 @@ void testdevantCoord(){
 		case 7:
 			dir3 =Direction::E;
 			break;
-		default://NE
-			dir3 =Direction::NE;
+		case 8:
+			dir3 = Direction::NE;
+			break;
+		default :
+			cout << "Erreur lors de l'attribution de la direction" << endl;
+			dir3 = Direction::N;
 			break;
 	}
 	
-	Direction dir4=dir3;
-	Coord c4;
-	c4=devantCoord(c3, dir3);
+	Coord c4 = devantCoord(c3, dir3);
 	
 	for(int i=0;i<4;i++){
-		tourneDroiteDir(dir4);
+		tourneDroiteDir(dir3);
 	}
 	
-	c4=devantCoord(c4, dir4);
+	c4 = devantCoord(c4, dir3);
 	//Comme j'ai mis en aleartoire les coordonées+directions
 	//choisies, ce test ne marche pas tout le temps
 	//je ne comprend pas pourquoi

@@ -112,7 +112,7 @@ void unTour(Grille &G, Armoire &A){
 	cout<<endl<<endl;
 }
 
-
+/*
 int main(){
 	srand(time(NULL));
 	Grille G;
@@ -129,4 +129,5 @@ int main(){
 	cout<<endl;
 	return 0;
 }
+*/
 
