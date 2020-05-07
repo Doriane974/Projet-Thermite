@@ -4,9 +4,9 @@ void testVide() {
 	Grille G;
 	Grille F;
 	initialiseGrilleVide(G, 10);
-	ASSERT(estVide(G));
+	ASSERT(estVide(G, creeCoord(1, 1)));
 	initialiseGrilleVide(F, 25);
-	ASSERT(estVide(F));
+	ASSERT(estVide(F, creeCoord(22, 12)));
 }
 
 void testDansGrille() {
