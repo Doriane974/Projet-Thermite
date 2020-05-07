@@ -77,63 +77,69 @@ void afficheDirection(Direction dir){
 	cout<<"la direction est " << direction << endl;
 }
 
-Direction aGauche(Direction dir){
+void tourneGauche(Direction &dir){
 	switch(dir)
 	{
 		case N:
-			return NO;
+			dir = NO;
 			break;
 		case NO:
-			return O;
+			dir = O;
 			break;
 		case O:
-			return SO;
+			dir = SO;
 			break;
 		case SO:
-			return S;
+			dir = S;
 			break;
 		case S:
-			return SE;
+			dir = SE;
 			break;
 		case SE:
-			return E;
+			dir = E;
 			break;
 		case E:
-			return NE;
+			dir = NE;
 			break;
-		default://NE
-			return N;
+		case NE:
+			dir = NE;
+			break;
+		default:
+			cout << "Direction invalide" << endl;
 			break;
 	}
 	
 }
 
-Direction aDroite(Direction dir){
+void tourneDroite(Direction &dir){
 	switch(dir)
 	{
 		case N:
-			return NE;
+			dir = NE;
 			break;
 		case NO:
-			return N;
+			dir = N;
 			break;
 		case O:
-			return NO;
+			dir = NO;
 			break;
 		case SO:
-			return O;
+			dir = O;
 			break;
 		case S:
-			return SO;
+			dir = SO;
 			break;
 		case SE:
-			return S;
+			dir = S;
 			break;
 		case E:
-			return SE;
+			dir = SE;
 			break;
-		default://NE
-			return E;
+		case NE:
+			dir = NE;
+			break;
+		default:
+			cout << "Coordonnée invalide" << endl;
 			break;
 	}
 	
