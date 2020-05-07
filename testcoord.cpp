@@ -28,8 +28,8 @@ void testdirGaucheetDroite(){
 	Direction dir_b_2 = Direction::S;
 	Direction dir_c_2 = Direction::S;
 	for(int i=0; i<8; i++){
-		tourneDroite(dir_b_2);
-		tourneGauche(dir_c_2);
+		tourneDroiteDir(dir_b_2);
+		tourneGaucheDir(dir_c_2);
 		
 	}
 	ASSERT(dir_b_2==dir_b);
@@ -43,7 +43,7 @@ void testdirGaucheetDroite(){
 
 void testdevantCoord(){
 	Coord c1 = creeCoord(1, 1);
-	Direction dir1=S;
+	Direction dir1=Direction::S;
 	Coord c2 = creeCoord(2, 1);
 	ASSERT(egalCoord(devantCoord(c1, dir1),c2));
 	/*REECRIRE CETTE PARTIE, PAS D'INTERACTION AVEC L'UTILISATEUR DANS LE FICHIER DE TEST

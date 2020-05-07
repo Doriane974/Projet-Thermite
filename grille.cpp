@@ -12,6 +12,17 @@ void initialiseGrilleVide(Grille &G, int n){
 	}
 }
 
+Termite creeTermite(int n, Coord c){
+	Termite T;
+	T.numeroT = n;
+	T.c = c;
+	T.sablier = 0;
+	T.brindille = false;
+	T.dir = Direction::N;
+	T.tourneSurPlace = false;
+	return T;
+	int numeroT;
+}
 
 bool dansGrille(Grille G, Coord c){
 	return (c.ligne < G.hauteur && c.ligne >= 0 && c.colonne < G.largeur && c.colonne >= 0);
@@ -22,7 +33,7 @@ bool estVide(Grille G, Coord c){
 }
 
 
-bool contientBrindille( Grille G, Coord c){
+bool contientBrindille(Grille G, Coord c){
 	return (dansGrille(G, c) && !(G.grille[c.ligne][c.colonne].brindille == 0));	
 }
 
