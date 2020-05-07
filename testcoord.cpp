@@ -2,14 +2,10 @@
 
 void testEgalCoord(){
 	Coord c1 = creeCoord(2,1);
-	
 	Coord c2 = creeCoord(3,1);
 	Coord c3 = creeCoord(2,1);
-	
 	ASSERT(!egalCoord(c1,c2));
 	ASSERT(egalCoord(c1,c3));
-	
-		
 }
 
 
@@ -24,16 +20,16 @@ void testdirGaucheetDroite(){
 être revenu dans la direction initiale ;
 */	
 	//(a)
-	Direction dir_a=N;
-	ASSERT(aDroite(aGauche(dir_a))==N);
+	Direction dir_a = N;
+	ASSERT(aDroite(aGauche(dir_a)) == N);
 	//(b)et(c)
-	Direction dir_b=S;
-	Direction dir_c=S;
-	Direction dir_b_2=S;
-	Direction dir_c_2=S;
-	for(int i=0;i<8;i++){
-		dir_b_2=aDroite(dir_b_2);
-		dir_c_2=aGauche(dir_c_2);
+	Direction dir_b = S;
+	Direction dir_c = S;
+	Direction dir_b_2 = S;
+	Direction dir_c_2 = S;
+	for(int i=0; i<8; i++){
+		tourneDroite(dir_b_2);
+		tourneGauche(dir_c_2);
 		
 	}
 	ASSERT(dir_b_2==dir_b);
@@ -46,15 +42,12 @@ void testdirGaucheetDroite(){
 
 
 void testdevantCoord(){
-	Coord c1;
-	c1.ligne=1;
-	c1.colonne=1;
+	Coord c1 = creeCoord(1, 1);
 	Direction dir1=S;
-	Coord c2;
-	c2.ligne=2;
-	c2.colonne=1;
-	ASSERT(egalCoord(devantCoord(dir1,c1),c2));
-	cout<<"choisir une coordonnée"<<endl;
+	Coord c2 = creeCoord(2, 1);
+	ASSERT(egalCoord(devantCoord(c1, dir1),c2));
+	/*REECRIRE CETTE PARTIE, PAS D'INTERACTION AVEC L'UTILISATEUR DANS LE FICHIER DE TEST
+	cout<<"choisir une coordonnée"<< endl;
 	Coord c3;
 	cin>>c3.ligne;
 	cin>>c3.colonne;
@@ -102,7 +95,7 @@ void testdevantCoord(){
 	c4=devantCoord(dir4,c4);
 	
 	ASSERT(egalCoord(c3,c4));
-	
+	*/
 	
 	
 }
@@ -110,12 +103,8 @@ void testdevantCoord(){
 
 
 int main(){
-	couleur("33");
-	Coord c1 = creeCoord(2,1);
 	testEgalCoord();
 	testdirGaucheetDroite();
-	Direction dirt=NE;
-	afficheDirection(dirt);
 	testdevantCoord();
 	return 0;
 }

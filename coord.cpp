@@ -149,7 +149,7 @@ void tourneDroite(Direction &dir){
 
 
 
-Coord devantCoord(Direction dir, Coord c){
+Coord devantCoord(Coord c, Direction dir){
 	
 	switch (dir)
 	{
